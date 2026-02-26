@@ -1,3 +1,5 @@
+import WaitlistForm from "@/components/WaitlistForm";
+
 export default function Home() {
   return (
     <>
@@ -286,6 +288,50 @@ export default function Home() {
                   arrow_forward
                 </span>
               </a>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 섹션 3: 얼리 액세스 신청 폼 ── */}
+        <section className="mt-16 border-t border-border-light dark:border-border-dark pt-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* 왼쪽: 설명 */}
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-3">
+                GET EARLY ACCESS
+              </p>
+              <h2 className="text-2xl lg:text-3xl font-bold mb-4 text-text-light dark:text-white">
+                Join Stories of Impact
+              </h2>
+              <p className="text-sm text-text-muted-light dark:text-text-muted-dark leading-relaxed mb-6">
+                Be the first to experience a platform that transforms how
+                mid-level donors connect with the causes they care about. Sign
+                up for early access and help shape the future of impact
+                storytelling.
+              </p>
+              <div className="space-y-3">
+                {[
+                  { icon: "lock", text: "개인정보 안전 보호" },
+                  { icon: "notifications_active", text: "출시 시 우선 알림" },
+                  { icon: "star", text: "베타 테스터 전용 혜택 제공" },
+                ].map(({ icon, text }) => (
+                  <div key={text} className="flex items-center gap-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 dark:bg-primary/20 shrink-0">
+                      <span className="material-icons text-primary text-sm">
+                        {icon}
+                      </span>
+                    </div>
+                    <span className="text-sm text-text-muted-light dark:text-text-muted-dark">
+                      {text}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 오른쪽: 폼 */}
+            <div className="rounded-xl border border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark p-6 shadow-sm">
+              <WaitlistForm />
             </div>
           </div>
         </section>
